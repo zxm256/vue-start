@@ -74,12 +74,8 @@
             result: function() {
                 return this.a+this.b
             }
-        },
-        watch: {
-            number: function(newValue) {
-                TweenLite.to(this.$data, 1, { tweenedNumber: newValue });
-            }
         }
+
     })
 </script>
 </body>
