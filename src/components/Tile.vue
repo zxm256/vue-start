@@ -12,7 +12,7 @@ export default {
   },
   computed: {
     tile_label_text () {
-      return this.tile.value == 0 ? '' : this.tile.value
+      return this.tile.value === 0 ? '' : this.tile.value
     },
     tile_value_class () {
       return 'tile' + this.tile.value

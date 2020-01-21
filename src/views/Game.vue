@@ -8,24 +8,14 @@
 </template>
 
 <script>
-import Tile from '../components/Tile.vue'
-import { Board } from '../components/Board.js'
-import GameEndView from '../components/GameEndView.vue'
+import Tile from '../components/Tile'
+import { Board } from '../common/Board'
+import GameEndView from '../components/GameEndView'
 export default {
   data () {
     return {
-      size: 4,
-      goal: 2048,
-      tiles: [],
-      won: false
+      board: new Board()
     }
-  },
-  created: function () {
-    console.log(11111)
-    for (let i = 0; i < Board.size; i++) {
-      this.tiles[i] = this.createRow()
-    }
-    this.pickRandomTileAndSetValue()
   },
   mounted () {
     window.addEventListener('keydown', this.handleKeyDown.bind(this))
@@ -39,19 +29,12 @@ export default {
         return
       }
       if (event.keyCode >= 37 && event.keyCode <= 40) {
-        event.preventDefault()
+        event.preventDefault();
         this.board.move(event.keyCode - 37)
       }
     },
     onReset () {
       this.board = new Board()
-    },
-    createRow () {
-      let res = []
-      for (let i = 0; i < Board.size; i++) {
-        res.push(new Tile())
-      }
-      return res
     }
   },
   components: {
