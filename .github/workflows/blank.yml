@@ -12,4 +12,4 @@ jobs:
     - name: Install Dependency
       run: npm install 
     - name: Build Dist data
-      run: npm build
+      run: npm run build
