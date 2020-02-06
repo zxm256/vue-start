@@ -29,7 +29,7 @@ export default {
         return
       }
       if (event.keyCode >= 37 && event.keyCode <= 40) {
-        event.preventDefault();
+        event.preventDefault()
         this.board.move(event.keyCode - 37)
       }
     },
